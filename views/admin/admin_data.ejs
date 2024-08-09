@@ -1,0 +1,41 @@
+<%- include ("navbar.ejs") %>
+
+<form action="/admin/save_admin_data" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+         <input type="hidden" name="admin_id" value="<%=admin_info.admin_id%>">
+            <div class="col-md-12 mt-3">
+                <h1 class="text-center">Admin Data</h1>
+            </div>
+            <div class="col-md-9 mb-2">
+                <h5 class="mt-3">Insert Image</h5>
+                <input type="file" name="admin_image" class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <img src="/uploads/<%=admin_info.admin_image%>" alt="" width="100%">
+            </div>
+    
+            <div class="col-md-4 mt-4">
+                <h5>Admin Name</h5>
+                <input type="text" name="admin_name" class="form-control bg-white" value="<%=admin_info.admin_name%>">
+            </div>
+    
+            <div class="col-md-4 mt-4">
+                <h5>Admin Skill</h5>
+                <input type="text" name="admin_skill" class="form-control bg-white" value="<%=admin_info.admin_skill%>">
+            </div>
+    
+            <div class="col-md-4 mt-4">
+                <h5>Admin Details</h5>
+                <textarea name="admin_desc" class="form-control bg-white" rows="1"><%=admin_info.admin_desc%></textarea>
+            </div>
+    
+            <div class="col-md-12 mt-5 text-center">
+                <button class="btn btn-outline-info">SAVE</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include ("footer.ejs") %>

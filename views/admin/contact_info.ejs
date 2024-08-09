@@ -1,0 +1,40 @@
+<%- include("navbar.ejs") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-3 mb-3">
+            <h1 class="text-center">Conact Data</h1>
+        </div>
+        <div class="col-md-12 mt-5">
+            <table class="table table-info table-hover">
+                <tr>
+                    <th>Sr No</th>
+                    <th>Contact Name</th>
+                    <th>Contact Email</th>
+                    <th>Contact Subject</th>
+                    <th>Contact Message</th>
+                    <th>Contact Description</th>
+                </tr>
+
+                <%
+                for (var i=0; i<contact_info.length;i++) {%>
+                    <tr>
+                        <td><%=i+1%></td>
+                        <td>
+                            <a href="/admin/delete_contact/<%=contact_info[i].contact_id%>" onclick="return confirm ('Are You Sure')">
+                                <button class="btn btn-outline-danger btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+                            </a>
+                        </td>
+                        <td><%=contact_info[i].contact_name%></td>
+                        <td><%=contact_info[i].contact_email%></td>
+                        <td><%=contact_info[i].contact_subject%></td>
+                        <td><%=contact_info[i].contact_desc%></td>
+
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("footer.ejs") %>

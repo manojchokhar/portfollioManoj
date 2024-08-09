@@ -1,0 +1,86 @@
+<%- include ("navbar.ejs") %>
+
+<form action="/admin/save_about_data" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+
+            <input type="hidden" name="about_id" value="<%=about_info.about_id%>">
+
+            <div class="col-md-12 mt-2">
+                <h1 class="text-center">About Data</h1>
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>First Name :-</h5>
+                <input type="text" name="first_name" class="form-control bg-white" value="<%=about_info.first_name%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Last Name :-</h5>
+                <input type="text" name="last_name" class="form-control bg-white" value="<%=about_info.last_name%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Age :-</h5>
+                <input type="tel" name="admin_age" class="form-control bg-white" value="<%=about_info.admin_age%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Nationality :-</h5>
+                <input type="text" name="admin_nationality" class="form-control bg-white" value="<%=about_info.admin_nationality%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Freelance :-</h5>
+                <input type="text" name="admin_freelance" class="form-control bg-white" value="<%=about_info.admin_freelance%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Mobile :-</h5>
+                <input type="text" name="admin_mobile" class="form-control bg-white" value="<%=about_info.admin_mobile%>">
+            </div>
+
+            <div class="col-md-4 mt-3">
+                <h5>Email :-</h5>
+                <input type="email" name="admin_address" class="form-control bg-white" value="<%=about_info.admin_address%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Languages :-</h5>
+                <input type="text" name="admin_languages" class="form-control bg-white" value="<%=about_info.admin_languages%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Linked-In Link :-</h5>
+                <input type="text" name="admin_linkedinLink" class="form-control bg-white" value="<%=about_info.admin_linkedinLink%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Expericence :-</h5>
+                <input type="text" name="admin_exp" class="form-control bg-white" value="<%=about_info.admin_exp%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Company Name :-</h5>
+                <input type="text" name="admin_compName" class="form-control bg-white" value="<%=about_info.admin_compName%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Resume Upload :-</h5>
+                <input type="file" name="admin_resume" class="form-control bg-white" value="<%=about_info.admin_resume%>">
+            </div>
+            <div class="col-md-12 mt-3">
+                <h5>Address :-</h5>
+                <textarea name="admin_adress_main" id="" class="form-control bg-white" rows="1"><%=about_info.admin_adress_main%></textarea>
+            </div>
+    
+            <div class="col-md-12 text-center mt-3 pb-3 pt-2">
+                <button class="btn btn-outline-success">SAVE</button>
+            </div>
+        </div>
+    
+        </div>
+    </div>
+</form>
+
+<%- include ("footer.ejs") %>

@@ -1,0 +1,65 @@
+<%-include('navbar.ejs') %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/admin/update_projects" method="post" enctype="multipart/form-data">
+                <div class="container">
+                    <div class="row">
+                        <input type="hidden" name="project_id" value="<%=project_info[0].project_id%>">
+                        <div class="col-md-12 mt-3 mb-3">
+                            <h1 class="text-center">Projects</h1>
+                        </div>
+                <div class="col-md-12">
+                   <a href="/admin/projects"><i class="fa-solid fa-left-long mb-5" style="font-size: 30px; color: red;"></i></a>
+                </div>
+                        <div class="col-md-4 mt-3">
+                            <h5>Project Name :-</h5>
+                            <input type="text" name="project_name" class="form-control bg-white" value="<%=project_info[0].project_name%>">
+                        </div>
+                
+                        <div class="col-md-4 mt-3">
+                            <h5>Project Role :-</h5>
+                            <input type="text" name="project_role" class="form-control bg-white" value="<%=project_info[0].project_role%>">
+                        </div>
+                
+                        <div class="col-md-4 mt-3">
+                            <h5>Client Name :-</h5>
+                            <input type="text" name="client_name" class="form-control bg-white" value="<%=project_info[0].client_name%>">
+                        </div>
+                
+                        <div class="col-md-4 mt-3">
+                            <h5>Project Technology:-</h5>
+                            <input type="text" name="project_technology" class="form-control bg-white" value="<%=project_info[0].project_technology%>">
+                        </div>
+                
+                        <div class="col-md-4 mt-3">
+                            <h5>Project Duration:-</h5>
+                            <input type="text" name="project_duration" class="form-control bg-white" value="<%=project_info[0].project_duration%>">
+                        </div>
+                
+                        <div class="col-md-4 mt-3">
+                            <h5>Project Description:-</h5>
+                            <input type="text" name="project_desc" class="form-control bg-white" value="<%=project_info[0].project_desc%>">
+                        </div>
+            
+                        <div class="col-md-9 mt-3">
+                            <h5>Project Image :-</h5>
+                            <input type="file" name="project_image" class="form-control">
+                        </div>
+                        <div class="col-md-3 mt-3">
+                            <img src="/uploads/<%=project_info[0].project_image%>" alt="" width="80%">
+                        </div>
+                
+                        <div class="col-md-12 text-center mt-3">
+                            <button class="btn btn-outline-success">SAVE</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%-include('footer.ejs') %>

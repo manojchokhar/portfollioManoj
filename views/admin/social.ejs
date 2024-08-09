@@ -1,0 +1,48 @@
+<%- include ('navbar.ejs') %>
+
+<form action="/admin/save_social" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+
+            <input type="hidden" name="social_id" value="<%=social_info.social_id%>">
+
+            <div class="col-md-12">
+                Social
+            </div>
+            <div class="col-md-4 mt-3">
+                <h5>Logo</h5>
+                <input type="file" name="admin_logo" class="form-control" >
+            </div>
+
+            <div class="col-md-4 mt-3">
+                <img src="/uploads/<%=social_info.admin_logo%>" alt="" width="100%">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Instagram Link</h5>
+                <input type="text" name="insta_link" class="form-control bg-white" value="<%=social_info.insta_link%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Twitter Link</h5>
+                <input type="text" name="twitter_link" class="form-control bg-white" value="<%=social_info.twitter_link%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>LinkedIn Link </h5>
+                <input type="text" name="linkedin_link" class="form-control bg-white" value="<%=social_info.linkedin_link%>">
+            </div>
+    
+            <div class="col-md-4 mt-3">
+                <h5>Gid Hub Link</h5>
+                <input type="text" name="github_link" class="form-control bg-white" value="<%=social_info.github_link%>">
+            </div>
+    
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-outline-success">SAVE</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%-include ('footer.ejs') %>

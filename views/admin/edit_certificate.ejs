@@ -1,0 +1,41 @@
+<%- include ("navbar.ejs") %>
+
+
+<form action="/admin/update_certificates" method="post" enctype="multipart/form-data">
+
+    <div class="container">
+        <div class="row">
+            <input type="hidden" name="certificate_id" value="<%=certificate_info.certificate_id%>">
+            <div class="col-md-12 mt-3">
+                <h2 class="text-center">Upload Certificate</h2>
+            </div>
+            <div class="col-md-9 mb-4">
+                <h5>Certificate Image :-</h5>
+                <input type="file" name="certificate_image" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <img src="/uploads/<%=certificate_info.certificate_image%>" alt="" width="100%">
+            </div>
+            <div class="col-md-5">
+                <h5>Certificate Title :-</h5>
+                <input type="text" name="certificate_title" class="form-control bg-white" value="<%=certificate_info.certificate_title%>">
+            </div>
+
+            <div class="col-md-5">
+                <h5>Certificate Date :-</h5>
+                <input type="date" name="certificate_date" class="form-control bg-white" value="<%=certificate_info.certificate_date%>">
+            </div>
+
+            <div class="col-md-10 mt-4">
+                <h5>Certificate Description :-</h5>
+                <textarea name="certificate_desc" rows="1" class="form-control bg-white"><%=certificate_info.certificate_desc%></textarea>
+            </div>
+
+            <div class="col-md-12 mt-4 text-center">
+                <button class="btn btn-outline-success text-white">SAVE</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include ("footer.ejs") %>

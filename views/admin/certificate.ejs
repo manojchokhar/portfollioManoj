@@ -1,0 +1,83 @@
+<%- include ("navbar.ejs") %>
+
+<form action="/admin/save_certificates" method="post" enctype="multipart/form-data">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <h2 class="text-center">Upload Certificate</h2>
+            </div>
+            <div class="col-md-10 mb-4">
+                <h5>Certificate Image :-</h5>
+                <input type="file" name="certificate_image" class="form-control">
+            </div>
+            <div class="col-md-5">
+                <h5>Certificate Title :-</h5>
+                <input type="text" name="certificate_title" class="form-control bg-white">
+            </div>
+
+            <div class="col-md-5">
+                <h5>Certificate Date :-</h5>
+                <input type="date" name="certificate_date" class="form-control bg-white">
+            </div>
+
+            <div class="col-md-10 mt-4">
+                <h5>Certificate Description :-</h5>
+                <textarea name="certificate_desc" rows="1" class="form-control bg-white"></textarea>
+            </div>
+
+            <div class="col-md-12 mt-4 text-center">
+                <button class="btn btn-outline-success text-white">SAVE</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-info table-hover">
+                <tr>
+                    <th>Sr No</th>
+                    <th>Action</th>
+                    <th>Certificate Image</th>
+                    <th>Certificate Title</th>
+                    <th>Certificate Date</th>
+                    <th>Certificate Description</th>
+                </tr>
+
+                <% 
+                for (var i=0; i<certificate_details.length; i++){ %>
+
+                    <tr>
+                        <td><%=i+1%></td>
+                        <td>
+                            <a href="/admin/edit_certificate/<%=certificate_details[i].certificate_id%>">
+                                <button class="btn btn-outline-success btn-sm">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </button>
+                            </a>
+
+                            <a href="/admin/delete_certificate/<%=certificate_details[i].certificate_id%>">
+                                <button class="btn btn-outline-danger btn-sm" onclick="return confirm('Are You Sure')">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </button>
+                            </a>
+                        </td>
+
+                        <td><%=certificate_details[i].certificate_title%></td>
+                        <td><%=certificate_details[i].certificate_date%></td>
+                        <td><%=certificate_details[i].certificate_desc%></td>
+                        <td>
+                            <img src="/uploads/<%=certificate_details[i].certificate_image%>" alt="" width="100">
+                        </td>
+                    </tr>
+
+                 <% } %>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include ("footer.ejs") %>
