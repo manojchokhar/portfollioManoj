@@ -86,45 +86,48 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
-            <table class="table">
-                <tr>
-                    <th>Sr.No</th>
-                    <th>Action</th>
-                    <th>Project Name</th>
-                    <th>Project Role</th>
-                    <th>Client Name</th>
-                    <th>Project Technology</th>
-                    <th>Project Duration</th>
-                    <th>Project Description</th>
-                    <th>Project Image</th>
-                </tr>
-
-                <% for(i=0; i<project_info.length; i++) { %>
+            <div class="table-responsive">
+                <table class="table">
                     <tr>
-                        <td><%=i+1%></td>
-                        <td>
-                            <a href="/admin/edit_projects/<%=project_info[i].project_id%>">
-                                <button class="btn btn-outline-success btn-sm mb-2"><i class="fa-regular fa-pen-to-square"></i></button>
-                            </a>
-                            <a href="/admin/delete_project/<%=project_info[i].project_id%>" onclick="return confirm('Are You Sure')">
-                                <button class="btn btn-outline-danger btn-sm"><i class="fa-regular fa-trash-can"></i></button>
-                            </a>
-                        </td>
-                        <td><%=project_info[i].project_name%></td>
-                        <td><%=project_info[i].project_role%></td>
-                        <td><%=project_info[i].client_name%></td>
-                        <td><%=project_info[i].project_technology%></td>
-                        <td><%=project_info[i].project_duration%></td>
-                        <td><%=project_info[i].project_desc%></td>
-                        <td>
-                            <img src="/uploads/<%=project_info[i].project_image%>" alt="Project Image" width="100%">
-                        </td>
+                        <th>Sr.No</th>
+                        <th>Action</th>
+                        <th>Project Name</th>
+                        <th>Project Role</th>
+                        <th>Client Name</th>
+                        <th>Project Technology</th>
+                        <th>Project Duration</th>
+                        <th>Project Description</th>
+                        <th>Project Image</th>
                     </tr>
-                <% } %>
-            </table>
+
+                    <% for(i=0; i<project_info.length; i++) { %>
+                        <tr>
+                            <td><%=i+1%></td>
+                            <td>
+                                <a href="/admin/edit_projects/<%=project_info[i].project_id%>">
+                                    <button class="btn btn-outline-success btn-sm mb-2"><i class="fa-regular fa-pen-to-square"></i></button>
+                                </a>
+                                <a href="/admin/delete_project/<%=project_info[i].project_id%>" onclick="return confirm('Are You Sure')">
+                                    <button class="btn btn-outline-danger btn-sm"><i class="fa-regular fa-trash-can"></i></button>
+                                </a>
+                            </td>
+                            <td><%=project_info[i].project_name%></td>
+                            <td><%=project_info[i].project_role%></td>
+                            <td><%=project_info[i].client_name%></td>
+                            <td><%=project_info[i].project_technology%></td>
+                            <td><%=project_info[i].project_duration%></td>
+                            <td><%=project_info[i].project_desc%></td>
+                            <td>
+                                <img src="/uploads/<%=project_info[i].project_image%>" alt="Project Image" width="100%">
+                            </td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
         </div>
     </div>
 </div>
+
 
 
 <%- include ("footer.ejs") %>
